@@ -159,6 +159,27 @@ body {
   display: block;
 }
 
+/* Adjustments for individual cards */
+.card-1968 .card-image img {
+  object-position: 50% 30%; /* Centered horizontally, 28% from the top vertically */
+}
+
+.card-1971 .card-image img {
+  object-position: 50% 48%;
+}
+
+.card-1978 .card-image img {
+  object-position: 50% 60%;
+}
+
+.card-1985 .card-image img {
+  object-position: 50% 41%;
+}
+
+.card-2024 .card-image img {
+  object-position: 50% 70%;
+}
+
 /* ---- Card Content ---- */
 .card-content {
   padding: 1rem 0.8rem 1.3rem 0.8rem; /* scaled down */
