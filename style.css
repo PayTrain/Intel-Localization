@@ -472,7 +472,7 @@ body {
 
 @media (max-width: 768px) {
   .custom-content-section {
-    padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+    padding: 2.5rem 5.5rem 2.5rem 5.5rem;
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
     /* Match timeline width for small screens */
