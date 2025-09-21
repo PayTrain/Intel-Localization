@@ -494,14 +494,13 @@ body {
 
 @media (max-width: 576px) {
   .custom-content-section {
-    padding: 0.7rem 0.1rem 0.7rem 0.1rem;
-    border-radius: 0.7rem;
+    padding: 2.5rem 3.5rem 2.5rem 3.5rem;
     margin-top: 0.7rem;
     margin-bottom: 0.7rem;
-    /* Match timeline width for mobile screens */
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    /* Match timeline card width and centering for mobile screens */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .custom-content-section h2 {
     font-size: 0.92rem;
