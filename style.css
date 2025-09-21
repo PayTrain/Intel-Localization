@@ -5,6 +5,8 @@
 .newsletter-footer-bg {
   background: linear-gradient(135deg, #0a2740 10%, var(--intel-blue) 100%);
   color: var(--white);
+  /* Ensure footer bottom section matches background */
+  position: relative;
 }
 
 .newsletter-footer-content {
@@ -16,6 +18,53 @@
   width: calc((var(--max-card-width) * 3) + (2rem * 2) + 2rem);
   margin-left: auto;
   margin-right: auto;
+}
+
+/* --- Subtle separator line between newsletter and bottom footer --- */
+.footer-separator {
+  /* Match the width of .newsletter-footer-content */
+  width: calc((var(--max-card-width) * 3) + (2rem * 2) + 2rem);
+  margin: 0.5rem auto 0.5rem auto;
+  border-top: 1px solid #e6eaf0;
+  opacity: 0.4;
+}
+
+/* --- Footer bottom section styles --- */
+.footer-bottom {
+  width: calc((var(--max-card-width) * 3) + (2rem * 2) + 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 1rem 0 1.2rem 0;
+}
+
+.footer-links {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem; /* Match .newsletter-desc */
+}
+
+.footer-link {
+  color: #cce3fa;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 0.95rem; /* Match .newsletter-desc */
+  transition: color 0.2s;
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.footer-divider {
+  color: #cce3fa;
+  opacity: 0.6;
+  margin: 0 0.2rem;
+}
+
+.footer-copyright {
+  color: #cce3fa;
+  font-size: 0.8rem; /* Match .newsletter-privacy */
 }
 
 .newsletter-title {
@@ -68,52 +117,6 @@
   margin-top: 0.5rem;
 }
 
-@media (max-width: 992px) {
-  .newsletter-footer-content {
-    padding: 1.5rem 0rem 1.5rem 0rem;
-    width: calc((190px * 3) + (1.2rem * 2) + 1rem);
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .newsletter-title {
-    font-size: 1.1rem;
-  }
-  .newsletter-desc {
-    font-size: 0.8rem;
-  }
-  .newsletter-form .form-control,
-  .newsletter-form .btn-primary {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .newsletter-footer-content {
-    padding: 2.5rem 0rem 2.5rem 0rem;
-    width: calc((190px * 2) + (1rem * 2) + 5rem);
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 576px) {
-  .newsletter-footer-content {
-    padding: 2.5rem 0rem 2.5rem 0rem;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .newsletter-title {
-    font-size: 0.92rem;
-  }
-  .newsletter-desc {
-    font-size: 0.8rem;
-  }
-  .newsletter-form .form-control,
-  .newsletter-form .btn-primary {
-    font-size: 0.7rem;
-  }
-}
 /* =========================
    Intel Sustainability Journey Styles
    ========================= */
@@ -487,6 +490,39 @@ body {
     font-size: 0.8rem;
     padding: 0.3rem 0.7rem;
   }
+
+  .newsletter-footer-content {
+    padding: 1.5rem 0rem 1.5rem 0rem;
+    width: calc((190px * 3) + (1.2rem * 2) + 1rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-separator {
+    width: calc((190px * 3) + (1.2rem * 2) + 1rem);
+  }
+  .footer-bottom {
+    width: calc((190px * 3) + (1.2rem * 2) + 1rem);
+    padding: 0.7rem 0 1rem 0;
+  }
+  .footer-links {
+    font-size: 0.8rem; /* Match .newsletter-desc */
+  }
+  .footer-link {
+    font-size: 0.8rem; /* Match .newsletter-desc */
+  }
+  .footer-copyright {
+    font-size: 0.8rem; /* Match .newsletter-privacy */
+  }
+  .newsletter-title {
+    font-size: 1.1rem;
+  }
+  .newsletter-desc {
+    font-size: 0.8rem;
+  }
+  .newsletter-form .form-control,
+  .newsletter-form .btn-primary {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -529,6 +565,29 @@ body {
   .custom-content-section .btn-primary {
     font-size: 0.75rem;
     padding: 0.25rem 0.6rem;
+  }
+
+  .newsletter-footer-content {
+    padding: 1.5rem 0rem 1.5rem 0rem;
+    width: calc((190px * 2) + (1rem * 2) + 5rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-separator {
+    width: calc((190px * 2) + (1rem * 2) + 5rem);
+  }
+  .footer-bottom {
+    width: calc((190px * 2) + (1rem * 2) + 5rem);
+    padding: 0.7rem 0 1rem 0;
+  }
+  .footer-links {
+    font-size: 0.8rem; /* Match .newsletter-desc */
+  }
+  .footer-link {
+    font-size: 0.8rem; /* Match .newsletter-desc */
+  }
+  .footer-copyright {
+    font-size: 0.8rem; /* Match .newsletter-privacy */
   }
 }
 
@@ -624,5 +683,38 @@ body {
     font-size: 0.7rem;
     padding: 0.2rem 0.5rem;
     border-radius: 0.5rem;
+  }
+
+    .newsletter-footer-content {
+    padding: 1.5rem 0rem 1.5rem 0rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-separator {
+    width: 80%;
+  }
+  .footer-bottom {
+    width: 80%;
+    padding: 0.7rem 0 1rem 0;
+  }
+  .footer-links {
+    font-size: 0.7rem; /* Match .newsletter-desc */
+  }
+  .footer-link {
+    font-size: 0.7rem; /* Match .newsletter-desc */
+  }
+  .footer-copyright {
+    font-size: 0.8rem; /* Match .newsletter-privacy */
+  }
+  .newsletter-title {
+    font-size: 0.92rem;
+  }
+  .newsletter-desc {
+    font-size: 0.8rem;
+  }
+  .newsletter-form .form-control,
+  .newsletter-form .btn-primary {
+    font-size: 0.7rem;
   }
 }
