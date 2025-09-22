@@ -93,6 +93,11 @@
   box-shadow: 0 2px 8px rgba(0, 49, 102, 0.10);
 }
 
+/* Flip input group border radius for RTL */
+.rtl .newsletter-form .form-control {
+  border-radius: 0 0.7rem 0.7rem 0 !important;
+}
+
 .newsletter-form .btn-primary {
   border-radius: 0 0.7rem 0.7rem 0;
   font-size: 0.95rem;
@@ -101,6 +106,11 @@
   border: none;
   box-shadow: 0 2px 8px rgba(0, 49, 102, 0.10);
   transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Flip button border radius for RTL */
+.rtl .newsletter-form .btn-primary {
+  border-radius: 0.7rem 0 0 0.7rem !important;
 }
 
 .newsletter-form .btn-primary:hover,
@@ -202,6 +212,11 @@ body {
   /* Enable horizontal scroll snap */
   scroll-snap-type: x mandatory;
   scroll-padding-left: 1rem; /* matches padding-left for snap alignment */
+}
+
+/* RTL: Apply scroll-padding-right equal to scroll-padding-left for .timeline */
+.rtl .timeline {
+  scroll-padding-right: 1rem;
 }
 
 /* ---- Custom Scrollbar Styles for Timeline ---- */
@@ -341,9 +356,14 @@ body {
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
   z-index: 2;
-  text-align: left;
+  text-align: left; /* Default to left, will override for RTL below */
   font-size: 0.8rem; /* scaled down */
   border-radius: inherit;
+}
+/* RTL: Right-align card-overlay text for all screen sizes */
+.rtl .card-overlay,
+.rtl .card-image .card-overlay {
+  text-align: right !important;
 }
 
 /* Show overlay on hover or focus-within */
@@ -359,6 +379,13 @@ body {
   font-size: 0.85rem; /* scaled down */
   margin: 1rem 0 4rem 0;
   letter-spacing: 0.02em;
+}
+
+/* Ensure timeline-instructions and footer-links are always centered, even in RTL mode */
+
+.rtl .timeline-instructions,
+.rtl .footer-links {
+  text-align: center !important;
 }
 
 
@@ -393,6 +420,15 @@ body {
   font-weight: 700;
   margin-bottom: 0.7rem;
   letter-spacing: -0.5px;
+  text-align: left;
+}
+
+/* Align h2 headings in 3-column section for RTL/LTR */
+.rtl .custom-content-section h2 {
+  text-align: right;
+}
+.ltr .custom-content-section h2 {
+  text-align: left;
 }
 
 .custom-content-section p {
@@ -413,6 +449,15 @@ body {
   font-size: 0.85rem;     /* Decreased font size */
   box-shadow: 0 2px 8px rgba(0, 49, 102, 0.10);
   transition: background 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+/* Right-align buttons in 3-column section for RTL */
+.rtl .custom-content-section .btn-primary {
+  float: right;
+}
+.ltr .custom-content-section .btn-primary {
+  float: left;
 }
 
 .custom-content-section .btn-primary:hover,
@@ -438,6 +483,10 @@ body {
     scroll-snap-type: x mandatory;
     scroll-padding-left: 0.5rem; /* matches padding-left for snap alignment */
   }
+  /* RTL: Apply scroll-padding-right equal to scroll-padding-left for .timeline */
+  .rtl .timeline {
+    scroll-padding-right: 0.5rem;
+  }
   .timeline-card {
     min-width: 170px;
     max-width: 210px;
@@ -462,9 +511,14 @@ body {
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
     z-index: 2;
-    text-align: left;
+      text-align: left; /* Default to left, will override for RTL below */
     font-size: 0.75rem; /* scaled down */
   }
+    /* RTL: Right-align card-overlay text for medium screens */
+    .rtl .card-overlay,
+    .rtl .card-image .card-overlay {
+      text-align: right !important;
+    }
   /* Show overlay when card is hovered or focused */
   .timeline-card:hover .card-overlay,
   .timeline-card:focus-within .card-overlay {
@@ -545,6 +599,11 @@ body {
     /* You can adjust the numbers above for even smaller cards if needed */
     gap: 1rem;
     padding: 2rem 0.5rem 1.5rem 0.5rem;
+    scroll-padding-left: 0.5rem; /* matches padding-left for snap alignment */
+  }
+  /* RTL: Apply scroll-padding-right equal to scroll-padding-left for .timeline */
+  .rtl .timeline {
+    scroll-padding-right: 0.5rem;
   }
 
   .custom-content-section {
@@ -558,6 +617,7 @@ body {
   }
   .custom-content-section h2 {
     font-size: 1rem;
+    text-align: center !important;
   }
   .custom-content-section p {
     font-size: 0.8rem;
@@ -565,6 +625,11 @@ body {
   .custom-content-section .btn-primary {
     font-size: 0.75rem;
     padding: 0.25rem 0.6rem;
+    float: none !important;
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 
   .newsletter-footer-content {
@@ -615,6 +680,11 @@ body {
     padding: 2rem 0.2rem 1rem 0.2rem;
     width: 100%;
     justify-content: flex-start;
+    scroll-padding-left: 0.2rem; /* matches padding-left for snap alignment */
+  }
+  /* RTL: Apply scroll-padding-right equal to scroll-padding-left for .timeline */
+  .rtl .timeline {
+    scroll-padding-right: 0.2rem;
   }
   .timeline-card {
     min-width: 0;
@@ -647,10 +717,15 @@ body {
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
     z-index: 2;
-    text-align: left;
+      text-align: left; /* Default to left, will override for RTL below */
     font-size: 0.8rem;
     pointer-events: none;
   }
+    /* RTL: Right-align card-overlay text for small screens */
+    .rtl .card-overlay,
+    .rtl .card-image .card-overlay {
+      text-align: right !important;
+    }
   .timeline-card:hover .card-image .card-overlay,
   .timeline-card:focus-within .card-image .card-overlay {
     transform: translateY(0);
